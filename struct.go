@@ -6,9 +6,11 @@ import (
 	"hash"
 	"hash/crc32"
 	"io"
-	"io/fs"
+	"io/ioutil"
 	"path"
 	"time"
+
+	"github.com/electricface/go-std-iofs"
 
 	"github.com/bodgit/plumbing"
 	"github.com/bodgit/sevenzip/internal/util"
@@ -138,7 +140,7 @@ func (rc *folderReadCloser) Seek(offset int64, whence int) (int64, error) {
 		return 0, errors.New("cannot seek beyond EOF")
 	}
 
-	if _, err := io.CopyN(io.Discard, rc, newo-int64(rc.wc.Count())); err != nil {
+	if _, err := io.CopyN(ioutil.Discard, rc, newo-int64(rc.wc.Count())); err != nil {
 		return 0, err
 	}
 

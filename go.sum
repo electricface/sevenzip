@@ -32,6 +32,8 @@ github.com/connesc/cipherio v0.2.1 h1:FGtpTPMbKNNWByNrr9aEBtaJtXjqOzkIXNYJp6OEyc
 github.com/connesc/cipherio v0.2.1/go.mod h1:ukY0MWJDFnJEbXMQtOcn2VmTpRfzcTz4OoVrWGGJZcA=
 github.com/davecgh/go-spew v1.1.0 h1:ZDRjVQ15GmhC3fiQ8ni8+OwkZQO4DARzQgrnXU1Liz8=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
+github.com/electricface/go-std-iofs v1.16.0 h1:J1QFXdd4J5WzNLet9cSxYQFCyfH2dAlEDocRZ3q6c0Q=
+github.com/electricface/go-std-iofs v1.16.0/go.mod h1:6ixurhc4VbYb11yCfjPiagrG6bbL98rReD6S2m7wl1k=
 github.com/envoyproxy/go-control-plane v0.9.1-0.20191026205805-5f8ba28d4473/go.mod h1:YTl/9mNaCwkRvm6d1a2C3ymFceY/DCBVvsKhRF0iEA4=
 github.com/envoyproxy/protoc-gen-validate v0.1.0/go.mod h1:iSmxcyjqTsJpI2R4NaDN7+kN2VEUnK/pcBlmesArF7c=
 github.com/go-gl/glfw v0.0.0-20190409004039-e6da0acd62b1/go.mod h1:vR7hzQXu2zJy9AVAgeJqvqgH9Q5CA+iKCZ2gyEVpxRU=

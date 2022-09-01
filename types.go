@@ -7,6 +7,7 @@ import (
 	"errors"
 	"fmt"
 	"io"
+	"io/ioutil"
 	"math/bits"
 	"time"
 
@@ -756,7 +757,7 @@ func readFilesInfo(r util.Reader) (*filesInfo, error) {
 		case idStartPos:
 			return nil, errors.New("sevenzip: TODO idStartPos") //nolint:goerr113
 		case idDummy:
-			if _, err := io.CopyN(io.Discard, r, int64(length)); err != nil {
+			if _, err := io.CopyN(ioutil.Discard, r, int64(length)); err != nil {
 				return nil, fmt.Errorf("readFilesInfo: CopyN error: %w", err)
 			}
 		default:

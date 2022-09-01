@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"hash/crc32"
 	"io"
-	"io/fs"
+	"io/ioutil"
 	"os"
 	"path"
 	"path/filepath"
@@ -16,6 +16,8 @@ import (
 	"strings"
 	"sync"
 	"time"
+
+	"github.com/electricface/go-std-iofs"
 
 	"github.com/bodgit/plumbing"
 	"github.com/bodgit/sevenzip/internal/pool"
@@ -122,7 +124,7 @@ func (fr *fileReader) Close() error {
 func (f *File) Open() (io.ReadCloser, error) {
 	if f.FileHeader.isEmptyStream || f.FileHeader.isEmptyFile {
 		// Return empty reader for directory or empty file
-		return io.NopCloser(bytes.NewReader(nil)), nil
+		return ioutil.NopCloser(bytes.NewReader(nil)), nil
 	}
 
 	var err error
@@ -331,7 +333,7 @@ func (z *Reader) init(r io.ReaderAt, size int64) error {
 
 	// If there's more data to read, we've not parsed this correctly. This
 	// won't break with trailing data as the bufio.Reader was bounded
-	if n, _ := io.CopyN(io.Discard, br, 1); n != 0 {
+	if n, _ := io.CopyN(ioutil.Discard, br, 1); n != 0 {
 		return errTooMuch
 	}
 

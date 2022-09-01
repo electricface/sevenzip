@@ -1,6 +1,6 @@
 module github.com/bodgit/sevenzip
 
-go 1.17
+go 1.15
 
 require (
 	github.com/andybalholm/brotli v1.0.4
@@ -16,3 +16,4 @@ require (
 )
 
 require github.com/hashicorp/errwrap v1.0.0 // indirect
+require github.com/electricface/go-std-iofs v1.16.0
